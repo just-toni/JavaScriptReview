@@ -12,3 +12,10 @@ let name = 'tee', friend = true, noise = 19
 console.log(firstName, last_name, _age, $school, isFemale, married)
 
 // exercise 1
+// comments can make code readable
+
+//exercise 2
+// Welcome to 30DaysOfJavaScript
+
+//exercise 3
+/* comments make code readable, easy to use and informative */
