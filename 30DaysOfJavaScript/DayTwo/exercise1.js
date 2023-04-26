@@ -42,4 +42,11 @@ sentence.search("because")
 // no.20
 let word = ' 30 Days Of JavaScript '
 word.trim()
+// no.21
+challenge.startsWith("30")
+// no.22
+challenge.endsWith("JavaScript")
+// no.23
+challenge.match("a")
+
 
