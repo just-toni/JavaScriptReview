@@ -5,53 +5,53 @@ console.log(challenge)
 // no.3
 console.log(challenge.length)
 // no.4
-print(challenge.toUpperCase)
+console.log(challenge.toUpperCase)
 // no.5
-print(challenge.toLowerCase)
+console.log(challenge.toLowerCase)
 // no.6
-print(challenge.substring(0,2))
+console.log(challenge.substring(0,2))
 // no.7
-print(challenge.substring(3, challenge.length))
+console.log(challenge.substring(3, challenge.length))
 // no.8
-print(challenge.includes('Script'))
+console.log(challenge.includes('Script'))
 // no.9
 let array = challenge.split
 // no.10
-print(challenge.split(' '))
+console.log(challenge.split(' '))
 // no.11
 let phrases = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'
 let phrasesArray = phrases.split(",")
-print(phrasesArray)
+console.log(phrasesArray)
 // no.12
-print(challenge.replace("JavaScript", "Python"))
+console.log(challenge.replace("JavaScript", "Python"))
 // no.13
-print(challenge.charAt(15))
+console.log(challenge.charAt(15))
 // no.14
-print(challenge.charCodeAt(11))
+console.log(challenge.charCodeAt(11))
 // no.15
-print(challenge.indexOf("a"))
+console.log(challenge.indexOf("a"))
 // no.16
-print(challenge.lastIndexOf("a"))
+console.log(challenge.lastIndexOf("a"))
 // no.17
 let sentence = 'You cannot end a sentence with because because because is a conjunction'
-print(sentence.indexOf('because'))
+console.log(sentence.indexOf('because'))
 // no.18
-print(sentence.lastIndexOf('because'))
+console.log(sentence.lastIndexOf('because'))
 // no.19
-print(sentence.search("because"))
+console.log(sentence.search("because"))
 // no.20
 let word = ' 30 Days Of JavaScript '
 word.trim()
-print(word)
+console.log(word)
 // no.21
-print(challenge.startsWith("30"))
+console.log(challenge.startsWith("3"))
 // no.22
-print(challenge.endsWith("JavaScript"))
+console.log(challenge.endsWith("t"))
 // no.23
-print(challenge.match("a"))
+console.log(challenge.match("a"))
 // no.24
-print(challenge.concat(challenge.substring(0, 10), challenge.substring(10, challenge.length)))
+console.log(challenge.concat(challenge.substring(0, 10), challenge.substring(10, challenge.length)))
 // no.25
-print(challenge.repeat(2))
+console.log(challenge.repeat(2))
 
 

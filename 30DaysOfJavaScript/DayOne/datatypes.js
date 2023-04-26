@@ -15,11 +15,11 @@ let one, two, three, four
 let five = 'five', six = 6, seven = false, eight = null
 
 //exercise 8
-let firstName = "Tyler"
-let last_name = 'Perry'
+let FName = "Tyler"
+let L_name = 'Perry'
 let isMarried = false
 let $country = `Canada`
-let _age = 21
+let age = 21
 
 // exercise 9
 let fName, l_name, isNotMarried, _country, $age
