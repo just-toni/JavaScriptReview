@@ -48,5 +48,9 @@ challenge.startsWith("30")
 challenge.endsWith("JavaScript")
 // no.23
 challenge.match("a")
+// no.24
+challenge.concat(challenge.substring(0, 10), challenge.substring(10, challenge.length))
+// no.25
+challenge.repeat(2)
 
 
