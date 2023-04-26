@@ -6,4 +6,4 @@ let randomNoBetweenZeroAndTwentyOne = Math.random * 21
 let name = `Toni`
 let age = 19
 let strength = 'reading'
-console.log('This student named ${name} is ${age} years old and enjoys ${strength}' )
+console.log(`my name is ${name} and I am ${age} years old and enjoy ${strength}`)
