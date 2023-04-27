@@ -39,13 +39,13 @@ if(day.toLowerCase() == 'monday' || day.toLowerCase() == 'tuesday' || day.toLowe
     console.log(`${day.charAt(0).toUpperCase()}${day.substring(1, day.length)} is a working day`)
 }
 else console.log(`${day.charAt(0).toUpperCase()}${day.substring(1, day.length)} is a weekend.`)
-// switch (day){
-//     case (day.toLowerCase() == 'monday' || day.toLowerCase() == 'tuesday' || day.toLowerCase() == 'wednesday'
-//     || day.toLowerCase() == 'thursday' || day.toLowerCase() == 'friday'):
-//         console.log(`${day.charAt(0).toUpperCase()}${day.substring(1, day.length)}is a working day`)
-//         break
-//     case (day.toLowerCase() == 'saturday' || day.toLowerCase() == 'sunday'):
-//         break;
-//     default: console.log(day)
-// }
+switch (true){
+    case (day.toLowerCase() == 'monday' || day.toLowerCase() == 'tuesday' || day.toLowerCase() == 'wednesday'
+    || day.toLowerCase() == 'thursday' || day.toLowerCase() == 'friday'):
+        console.log(`${day.charAt(0).toUpperCase()}${day.substring(1, day.length)}is a working day`)
+        break
+    case (day.toLowerCase() == 'saturday' || day.toLowerCase() == 'sunday'):
+        break;
+    default: console.log(day)
+}
 
