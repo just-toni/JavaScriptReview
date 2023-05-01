@@ -128,5 +128,5 @@ for (let i = 0; i < newArray2.length; i++) {
 }
 
 // no.15
-console.log(Math.random().toString(6))
+console.log(Math.random().toString(16).substring(2, 6))
 
