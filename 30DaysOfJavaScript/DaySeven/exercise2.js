@@ -156,5 +156,5 @@ const randomHexaNumberGenerator = () => '#' + Math.floor(Math.random() * 100000)
 console.log(randomHexaNumberGenerator())
 
 // no.18
-const userIdGenerator = () => '41XTDbE'
+const userIdGenerator = () => Math.floor(Math.random() * 100000).toString(7)
 console.log(userIdGenerator())
