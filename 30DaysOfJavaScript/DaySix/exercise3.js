@@ -257,7 +257,7 @@ console.log(Countries_with_two_words)
 // no.9
 let Countries_in_reversed_and_capitalized_order = new Array()
 for (let index = Countries.length; index <= 1; index--) {
-    Countries_in_reversed_and_capitalized_order[i] = Countries[i].concat(Countries[i].substring(0,1).toUpperCase, 
-    Countries[i].substring(1, Countries[i].length))
+    Countries_in_reversed_and_capitalized_order.push(Countries[i].concat(Countries[i].substring(0,1).toUpperCase(), 
+    Countries[i].substring(1, Countries[i].length)))
 }
 console.log(Countries_in_reversed_and_capitalized_order)

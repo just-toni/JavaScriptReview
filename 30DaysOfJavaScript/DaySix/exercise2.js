@@ -8,7 +8,7 @@ console.log(Math.random().toString(16))
 let array = new Array(3)
 for (let i = 0; i < array.length; i++) {
     if(Math.random() <=255){
-        array[i] = Math.random
+        array[i] = Math.random(256)
     }
 }
 console.log(`rgb (${array})`)
@@ -27,9 +27,9 @@ const countries = [
     'Japan',
     'Kenya'
 ]
-const countriesArray = new Array
+const countriesArray = new Array()
 for (let index = 0; index < countries.length; index++) {
-    countriesArray[i] = countries[i].toUpperCase()
+    countriesArray[index] = countries[index].toUpperCase()
 }
 console.log(countriesArray)
 
@@ -45,7 +45,7 @@ const webTechs = [
 ]
 const webTechArray = new Array
 for (let index = 0; index < webTechs.length; index++) {
-    webTechArray[i] = webTechs[i].toUpperCase()
+    webTechArray[index] = webTechs[index].toUpperCase()
 }
 console.log(webTechArray)
 
@@ -130,7 +130,7 @@ for (let index = 0; index < webTechArray.length; index++) {
     wordWebTech[0] = webTechArray[index]
     wordWebTech[1] = webTechArray[index].length
     completeWebTechArray.push(wordWebTech)
-    wordWebTech = newArray
+    wordWebTech = new Array()
 }
 console.log(completeWebTechArray)
 
@@ -143,9 +143,9 @@ for (let index = 0; index < webTechArray.length; index++) {
 }
 
 // no.15
-let fruit_array =  ['banana', 'orange', 'mango', 'lemon']
-for (let index = fruit_array.length; index <= 1; index--) {
-    console.log(fruit_array[index])    
+const fruit_array = new Array(['banana', 'orange', 'mango', 'lemon'])
+for (let index = fruit_array.length-1; index >= 0; index--) {
+    console.log(fruit_array[index])
 }
 
 // no.16
@@ -154,8 +154,8 @@ const fullStack = [
     ['Node', 'Express', 'MongoDB']
 ]
 for (let index = 0; index < fullStack.length; index++) {
-    for (let index = 0; index < fullStack[i].length; index++) {
-        console.log(fullStack[j])
+    for (let j = 0; j <= fullStack[index].length; j++) {
+        console.log(fullStack[index])
     }    
     console.log('\n')
 }
