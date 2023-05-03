@@ -149,20 +149,103 @@ console.log(modifyArray(testArray4))
 
 // no.15
 const isPrime = function(number) {
-    if (number > 1){
-        for (let index = 2; index <= number; index++) {
-            let flag = 0
-            for (let j = 1; j <= index; j++) {
-                if(index%j ===0){
-                    flag++
-                }                
+    for (let index = 2; index <= number; index++) {
+        let flag = 0
+        for (let j = 1; j <= index; j++) {
+            if(index % j === 0){
+                flag++
+            }                
+        }
+        if(flag == 2){
+            return true
+        }
+        else return false
+    }
+}
+console.log(isPrime(46))
+console.log(isPrime(7))
+
+// no.16
+function isUnique(array){
+    let item = array[0]
+    let counter = 0
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if(array[index] === item){
+            counter++;
+            item = array[index]
+        }
+    }
+    if(counter > 1){
+        return false
+    }
+    else return true
+}
+const testArray5 = ["dave", 'pass', 'tree', 'doha', 'dave']
+console.log(isUnique(testArray4))
+console.log(isUnique(testArray5))
+
+// no.18
+function isValidVariable(variable) {
+    const alphabetArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+    's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+    'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+    for (let index = 0; index < variable.length; index++) {
+        // if(variable.charAt(index) !== " "){
+            if (variable.charAt(index) === '$' || variable.charAt(index) === '_' && variable.charAt(index) !== ' '){
+                for (let index = 0; index < alphabetArray.length; index++) {
+                    const element = alphabetArray[index];
+                    if(variable.charAt(index) === element){
+                        return true
+                    }
+                }
             }
-            if(flag == 2){
-                return true
+            return false
+        // }
+    }
+}
+console.log(isValidVariable('$tyler'))
+console.log(isValidVariable('$tyler_tye'))
+console.log(isValidVariable('$tyler tye'))
+console.log(isValidVariable('*hj'))
+console.log(isValidVariable(' *hj'))
+console.log(isValidVariable('h j'))
+console.log(isValidVariable('tyl123'))
+
+// no.17
+function checkDataType(array){
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        for (let j = 0; j < index; j++) {
+            const element1 = array[index];
+            if(typeof(element)!== typeof(element1)){
+                return false
             }
-            else return false
+            return true;
         }
     }
 }
-console.log(isPrime(90))
-console.log(isPrime(7))
+console.log(checkDataType(testArray2))
+console.log(checkDataType(testArray))
+
+// no.19
+const sevenRandomNumbers = () =>{
+    let resultArray = new Array()
+    for (let index = 0; index < 7; index++) {
+        resultArray.push(Math.floor(Math.random() * 9))
+    }
+    return resultArray
+}
+console.log(sevenRandomNumbers());
+
+// no.20
+const reverseCountries = (countriesArray) =>{
+    const reversedArray = []
+    for (let index = countriesArray.length -1; index >= 0; index--) {
+        const element = countriesArray[index];
+        reversedArray.push(element)
+    }
+    return reversedArray
+}
+let testArray6 = new Array('play', 'time', 'fun')
+console.log(reverseCountries(testArray6))
