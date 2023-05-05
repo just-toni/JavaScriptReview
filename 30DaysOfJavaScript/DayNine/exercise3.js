@@ -2063,4 +2063,81 @@ function mostPopulatedCountries(array, num){
     }
     return denseCountries;
 }
-console.log(mostPopulatedCountries(largestPopulation, 3));
+console.log(mostPopulatedCountries(largestPopulation, 10));
+
+// no.4
+const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26];
+ages.sort();
+const statistics = {
+    describe: function(){
+        console.log('Count:', statistics.count()) // 25
+        console.log('Sum: ', statistics.sum()) // 744
+        console.log('Min: ', statistics.min()) // 24
+        console.log('Max: ', statistics.max()) // 38
+        console.log('Range: ', statistics.range()) // 14
+        console.log('Mean: ', statistics.mean()) // 30
+        console.log('Median: ',statistics.median()) // 29
+        console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
+        // console.log('Variance: ',statistics.var()) // 17.5
+        // console.log('Standard Deviation: ', statistics.std()) // 4.2
+        // console.log('Variance: ',statistics.var()) // 17.5
+        // console.log('Frequency Distribution: ',statistics.freqDist())
+    },
+    count : function(){
+        return ages.length;
+    },
+    sum: function(){
+        let sum = 0;
+        for (let index = 0; index < ages.length; index++) {
+            const element = ages[index];
+            sum += element;
+        }
+        return sum;
+    },
+    min: function(){
+        let min = ages[0];
+        for (let index = 0; index < ages.length; index++) {
+            const element = ages[index];
+            min = Math.min(min, element);
+        }
+        return min;
+    },
+    max: function(){
+        let max = ages[0];
+        for (let index = 0; index < ages.length; index++) {
+            const element = ages[index];
+            max = Math.max(max, element);
+        }
+        return max;
+    },
+    range: function(){
+        return this.max() - this.min();
+    },
+    mean: function(){
+        return this.sum() / this.count();
+    },
+    median: function(){
+        let median = (this.count() / 2) - 1;
+        return ages[median];
+    },
+    mode: function(){
+        return 
+    }
+
+}
+// console.log(statistics.describe())
+let length = ages.length;
+console.log(ages[length])
+// console.log('Count:', statistics.count()) // 25
+// console.log('Sum: ', statistics.sum()) // 744
+// console.log('Min: ', statistics.min()) // 24
+// console.log('Max: ', statistics.max()) // 38
+// console.log('Range: ', statistics.range()) // 14
+// console.log('Mean: ', statistics.mean()) // 30
+// console.log('Median: ',statistics.median()) // 29
+// console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
+// console.log('Variance: ',statistics.var()) // 17.5
+// console.log('Standard Deviation: ', statistics.std()) // 4.2
+// console.log('Variance: ',statistics.var()) // 17.5
+// console.log('Frequency Distribution: ',statistics.freqDist()) 
+    

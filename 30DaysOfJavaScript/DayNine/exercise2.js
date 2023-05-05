@@ -2115,4 +2115,4 @@ function lastTenCountries (array){
 }
 
 console.log(getLastTenCountries(countries))
-console.log(lastTenCountries(countries))
+// console.log(lastTenCountries(countries))
