@@ -2034,6 +2034,15 @@ const sortedCapitals = countries.sort((a,b)=>{
 })
 console.log(sortedCapitals);
 
+const products = [
+    { product: 'banana', price: 3 },
+    { product: 'mango', price: 6 },
+    { product: 'potato', price: ' ' },
+    { product: 'avocado', price: 8 },
+    { product: 'coffee', price: 10 },
+    { product: 'tea', price: '' },
+]
+console.log(products[0]);
 
 // no.3
 const largestPopulation = countries.sort((a,b) => {
@@ -2041,10 +2050,17 @@ const largestPopulation = countries.sort((a,b) => {
     if(a.population > b.population) return -1;
     return 0;
 })
+function DenseCountries(name, population){
+    this.name = name;
+    this.population = population;
+}
 function mostPopulatedCountries(array, num){
-    const denseCountries = []
+    const denseCountries = [];
     for (let index = 0; index < num; index++) {
         const element = array[index];
-        
+        denseCountries.push(new DenseCountries(element.name, element.population))
+        // console.log(denseCountries);
     }
+    return denseCountries;
 }
+console.log(mostPopulatedCountries(largestPopulation, 3));
