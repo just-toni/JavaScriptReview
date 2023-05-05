@@ -2074,13 +2074,45 @@ const categorizeCountries = (array) =>{
 console.log(categorizeCountries(countries))
 
 // no.4
-const getFrequencyOfCountryLetter = (letter) => {
-    let count = 0
-    const y = countries.filter((country) =>  {
-        country.name.startsWith('B', 0)
-        // count++
-    })
-    console.log(y)
-    // return `${letter} is found ${count} times to start a country's name`
+// const getFrequencyOfCountryLetter = (letter) => {
+//     let count = 0
+//     const y = countries.filter((country) =>  {
+//         country.name.startsWith('B', 0)
+//         // count++
+//     })
+//     console.log(y)
+//     // return `${letter} is found ${count} times to start a country's name`
+// }
+// console.log(getFrequencyOfCountryLetter('U'))
+
+// no.5
+const getFirstTenCountries = (array) => {
+  const newArray = [];
+  for (let index = 0; index < 10; index++) {
+    const element = array[index];
+    newArray.push(element);
+  }
+  return newArray;
 }
-console.log(getFrequencyOfCountryLetter('U'))
+function getTenCountries (array){
+  return array.slice(0, 10);
+}
+
+console.log(getFirstTenCountries(countries))
+console.log(getTenCountries(countries))
+
+// no.6
+const getLastTenCountries = (array) => {
+  const newArray = [];
+  for (let index = array.length - 10; index < array.length; index++) {
+    const element = array[index];
+    newArray.push(element);
+  }
+  return newArray;
+}
+function lastTenCountries (array){
+  return array.slice(array.length - 10, array.length);
+}
+
+console.log(getLastTenCountries(countries))
+console.log(lastTenCountries(countries))
