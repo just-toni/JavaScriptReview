@@ -2042,7 +2042,6 @@ const products = [
     { product: 'coffee', price: 10 },
     { product: 'tea', price: '' },
 ]
-console.log(products[0]);
 
 // no.3
 const largestPopulation = countries.sort((a,b) => {
@@ -2077,11 +2076,10 @@ const statistics = {
         console.log('Range: ', statistics.range()) // 14
         console.log('Mean: ', statistics.mean()) // 30
         console.log('Median: ',statistics.median()) // 29
-        console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
-        // console.log('Variance: ',statistics.var()) // 17.5
-        // console.log('Standard Deviation: ', statistics.std()) // 4.2
-        // console.log('Variance: ',statistics.var()) // 17.5
-        // console.log('Frequency Distribution: ',statistics.freqDist())
+        // console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
+        console.log('Variance: ',statistics.var()) // 17.5
+        console.log('Standard Deviation: ', statistics.std()) // 4.2
+        console.log('Frequency Distribution: ',statistics.freqDist())
     },
     count : function(){
         return ages.length;
@@ -2120,14 +2118,36 @@ const statistics = {
         let median = (this.count() / 2) - 1;
         return ages[median];
     },
-    mode: function(){
-        return 
+    // mode: function(){
+    //     return 
+    // }
+    var: function(){
+        let sumvar = 0;
+        for (let index = 0; index < ages.length; index++) {
+            const element = ages[index];
+            sumvar += ((element - this.mean()) ** 2);
+        }
+        let meanvar = sumvar / this.count();
+        return meanvar;
+    },
+    std: function(){
+        let sumstd = 0;
+        for (let index = 0; index < ages.length; index++) {
+            const element = ages[index];
+            sumstd += ((element - this.mean()) ** 2);
+        }
+        let meanstd = sumstd / this.count();
+        return Math.sqrt(meanstd);
+    },
+    freqDist: function(){
+
     }
 
+
 }
-// console.log(statistics.describe())
-let length = ages.length;
-console.log(ages[length])
+console.log(statistics.describe())
+// let length = ages.length;
+// console.log(ages[length])
 // console.log('Count:', statistics.count()) // 25
 // console.log('Sum: ', statistics.sum()) // 744
 // console.log('Min: ', statistics.min()) // 24
