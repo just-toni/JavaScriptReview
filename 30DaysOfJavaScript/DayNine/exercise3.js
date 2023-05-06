@@ -2043,6 +2043,17 @@ const products = [
     { product: 'tea', price: '' },
 ]
 
+// no.2
+const mostSpokenLanguages = countries.filter((pop)=>{
+  const languages = [];
+  for (let index = 0; index < countries.length; index++) {
+    const element = countries[index];
+    pop === element.languages;
+    // languages.push({country: element.name, languages: })
+  }
+})
+console.log(mostSpokenLanguages);
+
 // no.3
 const largestPopulation = countries.sort((a,b) => {
     if(a.population < b.population) return 1;
@@ -2057,7 +2068,8 @@ function mostPopulatedCountries(array, num){
     const denseCountries = [];
     for (let index = 0; index < num; index++) {
         const element = array[index];
-        denseCountries.push(new DenseCountries(element.name, element.population))
+        denseCountries.push({name: element.name, population: element.population});
+        // denseCountries.push(new DenseCountries(element.name, element.population))
         // console.log(denseCountries);
     }
     return denseCountries;

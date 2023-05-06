@@ -1,4 +1,4 @@
-const users = {
+const users1 = {
     Alex: {
       email: 'alex@alex.com',
       skills: ['HTML', 'CSS', 'JavaScript'],
@@ -51,19 +51,35 @@ const users = {
 }
 
 // no.1
-let alexSkills = users.Alex.skills.length
-let asabSkills = users.Asab.skills.length
-let brookSkills = users.Brook.skills.length
-let danielSkills = users.Daniel.skills.length
-let johnSkills = users.John.skills.length
-let thomasSkills = users.Thomas.skills.length
-let paulSkills = users.Paul.skills.length
+let alexSkills = users1.Alex.skills.length
+let asabSkills = users1.Asab.skills.length
+let brookSkills = users1.Brook.skills.length
+let danielSkills = users1.Daniel.skills.length
+let johnSkills = users1.John.skills.length
+let thomasSkills = users1.Thomas.skills.length
+let paulSkills = users1.Paul.skills.length
+
+// no.4
+const usersCopy = Object.assign({}, users1);
+const enteries = Object.entries(usersCopy);
+usersCopy.Toni = 'Toni';
+
+enteries.push(['Toni', {
+  email: 'toni.toni@toni.com',
+  skills: ['Java', "HTML", "CSS", 'JavaScript', 'MySQL', 'Python'],
+  age: 1,
+  isLoggedIn: false,
+  points: 0
+}])
+// users.Toni.email = 'toni@toni.com';
+console.log(enteries);
+
 
 // no.5
-console.log(Object.keys(users))
+console.log(Object.keys(users1))
 
 // no.6
-console.log(Object.values(users))
+console.log(Object.values(users1))
 
 // no.7
 const countries = [
