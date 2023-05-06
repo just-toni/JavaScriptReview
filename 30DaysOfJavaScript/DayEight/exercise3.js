@@ -116,6 +116,7 @@ const users = [
 ]
 
 // no.2 a
+// has a bug, line 122 doesn't so anything, fix that!
 const signUp = (new_user_username, new_user_email, new_user_password) => {
     let new_user_id = Math.random().toString(36).substring(2, 8)
     const idList = Object.values(users._id)
