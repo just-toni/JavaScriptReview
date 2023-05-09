@@ -86,6 +86,13 @@ class Cat extends Animal{
     set setBreed(breed){
         this.breed = breed;
     }
+
+    getInfo(){
+        if(this.gender !== undefined || this.breed !== undefined){
+            return `My name is ${this.getName} and I am ${this.getAge} months old. I am ${this.getColor} in color and I am a ${this.getGender}. I am a ${this.getBreed} cat.` ;
+        }
+        else return super.getInfo();
+    }
 }
 
 class Dog extends Animal{
@@ -98,4 +105,5 @@ class Dog extends Animal{
 }
 
 const cat1 = new Cat('Billy', 12, 'ginger', 4);
+console.log(cat1.getInfo());
 const dog = new Dog('Bingo', 9, 'brown', 3, 'M', 'Poodle', 2);
