@@ -78,6 +78,7 @@ class Statistics{
                     console.log(counter);
                 }
             }
+            counter = ((counter/this.count() * 100));            
             // if(!resultArray.includes({element, counter})){
                 resultSet.add({value: element,freq: counter});
             // }
@@ -105,5 +106,72 @@ const statistics = new Statistics(ages);
 statistics.describe();
 console.log(statistics.freqDist());
 
+class PersonAccount{
 
+    constructor(firstName, lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.income = new Set;
+        this.expense = new Set;
+    }
 
+    totalIncome(){
+        let sumIncome = 0;
+        this.income.forEach(item => sumIncome += item.amount)
+        return sumIncome;
+    }
+
+    addIncome(income, description){
+        this.income.add({name: description, amount: income});
+    }
+
+    get getIncome(){
+        return this.income;
+    }
+
+    get getExpenses(){
+        return this.expense;
+    }
+
+    addExpense(expense, description){
+        this.expense.add({name: description, amount: expense});
+    }
+
+    totalExpense(){
+        let sumExpense = 0;
+        this.expense.forEach((item)=> {
+            sumExpense+= item.amount;
+        })
+        return sumExpense;
+    }
+
+    accountBalance(){
+        return this.totalIncome() - this.totalExpense();
+    }
+
+    accountInfo(){
+        let fullName = `${this.firstName}, ${this.lastName}`;
+        return `Account Name: ${fullName} \n 
+        Total Income: ${this.totalIncome()} \n
+        Total Expense: ${this.totalExpense()} \n 
+        Account Balance: ${this.accountBalance()}`;
+    }
+
+}
+
+const person1 = new PersonAccount('Ty', 'Walker');
+person1.addIncome(10000, 'Salary');
+person1.addIncome(500, 'Gift');
+person1.addIncome(7000, 'Tax Return');
+person1.addIncome(200, 'Shopping Refund');
+person1.addIncome(2000, 'Bursary');
+
+person1.addExpense(850, 'Rent');
+person1.addExpense(2000, 'Shopping');
+person1.addExpense(1500, 'Grocery');
+person1.addExpense(300, 'Gas');
+
+console.log(person1.accountInfo());
+console.log(person1.accountBalance());
+console.log(person1.getIncome)
+console.log(person1.getExpenses)
