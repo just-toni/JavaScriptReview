@@ -35,9 +35,9 @@ const PersonAccount = {
         return sum;
     },
     totalExpense: function(){
-        let sum = 0;
-        this.expenses.forEach(amount => sum+= amount.amount);
-        return sum;
+        // let sum = 0;
+        this.expenses.reduce((assn,consc) => assn + consc, 0)
+        // return sum;
     },
     displayIncome: function(){
         let result = "";
