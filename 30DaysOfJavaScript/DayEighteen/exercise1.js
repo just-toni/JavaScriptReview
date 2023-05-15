@@ -38,7 +38,7 @@ fetch(countriesAPI).then(response => response.json()).then(data => {
     data.forEach(element => {
         console.log(`Name: ${element.name}, 
 Capital: ${element.capital}, 
-Languages: ${language}, 
+Languages: ${element.languages.n}, 
 Population: ${element.population}, 
 Area: ${element.area}.`);
     });
