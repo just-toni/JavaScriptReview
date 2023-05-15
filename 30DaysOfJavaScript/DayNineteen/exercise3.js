@@ -35,6 +35,7 @@ function personAccount(){
     function getExpenses(){
         return expense;
     }
+    // not returning the totalExpense and totalIncome for some reason but yet returns the calculated account balance
     function totalExpense(){
         expense.forEach((item)=> {
             sumExpense += Number.parseInt(item.amount);
