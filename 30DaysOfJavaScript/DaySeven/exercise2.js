@@ -20,7 +20,7 @@ console.log(printArray(arrayToBePrinted))
 
 // no.4
 const showDateTime = () => {
-    return new Date().getMonth() + "/" + new Date().getDay() + "/" + new Date().getFullYear() + " " + 
+    return new Date().getMonth().toString() + "," + new Date().getDay() + "," + new Date().getFullYear() + " " + 
     new Date().getHours() + ":" + new Date().getMinutes()
 }
 console.log(showDateTime())
