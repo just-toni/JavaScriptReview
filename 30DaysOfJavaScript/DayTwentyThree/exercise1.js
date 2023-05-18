@@ -78,6 +78,7 @@ const isPrime = function(n) {
 //         output.appendChild(innerdiv);
 //     }
 // }
+let innerdiv;
 button.addEventListener('click', e = () => {
     if(input.value.length === 0){
         errorMessage.textContent = 'Enter a number value in the input field to generate numbers';
@@ -125,6 +126,8 @@ button.addEventListener('click', e = () => {
             output.appendChild(innerdiv);
         }
     }
-})
+});
 
+// how to clear the output after every input.
+// how to present a default value when they first land the page.
 
