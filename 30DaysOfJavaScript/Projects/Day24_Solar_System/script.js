@@ -33,7 +33,7 @@ let main = document.querySelector('main');
 let content = document.querySelector('div');
 let contentImageOverlay = document.querySelectorAll('div')[1];
 // contentImageOverlay.style.cssText = "position: fixed; display:block; width: 900px; height: 400px; background-color: rgba(0,0,0,0.5); margin-left: 80px; z-index: 1;";
-contentImageOverlay.style.cssText = 'background-color: darkgrey; opacity: 0.3; height: 500px';
+contentImageOverlay.style.cssText = 'background:rgba(128,128,128,0.3); height: 500px';
 let contentImage = document.querySelector('img');
 contentImage.style.cssText = 'padding: 20px; width: 350px; top: 10px; left: 10px; opacity: 1; margin-top: 45px';
 let contentDescription = document.querySelectorAll('div')[2];
@@ -41,14 +41,14 @@ button.addEventListener('click', e  = () => {
     if(input.value.length <= 0){
         contentImage.style.display = 'none';
         contentDescription.textContent = 'Mass is required';
-        contentDescription.style.cssText = 'background-color: grey; margin-top: -50px; margin-left:370px; width: 250px; padding: 10px 15px; opacity: 0.5;';
-        contentImageOverlay.style.cssText = 'height: 60px; background-color: darkgrey; opacity: 0.3;';
+        contentDescription.style.cssText = 'background:rgba(128,128,128,0.5); margin-top: -50px; margin-left:370px; width: 250px; padding: 10px 15px; ';
+        contentImageOverlay.style.cssText = 'height: 60px; background:rgba(128,128,128,0.3);';
     }
     else if(dropDown.value === 'none'){
         contentImage.style.display = 'none';
         contentDescription.textContent = 'You did not choose a planet yet.';
-        contentDescription.style.cssText = 'background-color: grey; margin-top: -50px; margin-left:370px; width: 250px; padding: 10px 15px; opacity: 0.5;';
-        contentImageOverlay.style.cssText = 'height: 60px; background-color: darkgrey; opacity: 0.3;';
+        contentDescription.style.cssText = 'background:rgba(128,128,128,0.5); margin-top: -50px; margin-left:370px; width: 250px; padding: 10px 15px; ';
+        contentImageOverlay.style.cssText = 'height: 60px; background:rgba(128,128,128,0.3);';
     }
     else{
         let planet = dropDown.value;
@@ -56,7 +56,8 @@ button.addEventListener('click', e  = () => {
             console.log(planetNames[index]);
             if(planetNames[index] === planet){
                 contentImage.setAttribute('src', planetImageArray[index]);
-                contentImage.style.display = 'block';
+                contentImage.style.cssText = 'display: flex; padding-top: 70px; padding-left: 50px; width: 350px;';
+                header.style.cssText = 'margin-bottom: 10px;'
                 // let innerSection = document.createElement('section');
                 // innerSection.setAttribute('id', 'innerSection')
                 // let answer = document.createElement('p');
@@ -69,24 +70,27 @@ button.addEventListener('click', e  = () => {
                 // contentDescription.textContent = `${innerSection}`;
                 contentDescription.innerHTML = `
                 <p id="innerSection">The weight of the object on <span id="description">${planet.toUpperCase()}</span></p>
-                <br><p id="answerSection"><span id="answer">${(input.value * planetWeights[index]).toFixed(2).concat(' N')}</span></p>
+                <br><div id="trial"><p id="answerSection"><span id="answer">${(input.value * planetWeights[index]).toFixed(2).concat(' N')}</span></p></div>
                 `;
-                contentDescription.style.cssText = 'background-color: grey; color: white; width: 500px; height: 130px; margin-left: 500px; margin-top: -240px; padding-top: 3px;';
+                contentDescription.style.cssText = 'background:rgba(128,128,128,0.3); color: white; width: 500px; height: 150px; margin-left: 440px; margin-top: -340px; padding-top: 3px;';
                 let innerSection = document.querySelector('#innerSection');
                 innerSection.style.cssText = 'text-align: center; height: 80px; ';
                 let description = document.querySelector('#description');
-                description.style.cssText = 'font-weight: bolder; font-size: 15pt; color: white;';
+                description.style.cssText = 'font-weight: bold; font-size: 15pt; color: white;';
                 let answer = document.querySelector('#answer');
                 answer.style.cssText = 'font-weight: bolder; font-size: 12pt; color: white; display: block; text-align: center; ';
                 let answerSection = document.querySelector('#answerSection');
-                answerSection.style.cssText = 'background-color: lightgrey; color: white; width: 80px; height: 80px; border-radius: 50%; margin-left: 220px; margin-top: -75px;';
+                answerSection.style.cssText = 'padding-top: 25px;';
+                let trial = document.querySelector('#trial');
+                trial.style.cssText = 'background:rgba(211,211,211,0.3); color: white; width: 80px; height: 80px; border-radius: 50%; margin-left: 220px; margin-top: -95px; font-weight:bold;';
             }
         }
     }
 });
 
 /**
- * arrange the image and the result text properly(for loop contents)
- * figure out how to make only the background opaque and not the elements on top of it
- * centering text (the answer needs to be centered inside the answer section) 
+ * figure out how to not use innerHTML 
+ * arrange the image and the result text properly(for loop contents) (done)
+ * figure out how to make only the background opaque and not the elements on top of it (done)
+ * centering text (the answer needs to be centered inside the answer section)  (done)
  */
