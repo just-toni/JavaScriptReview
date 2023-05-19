@@ -89,6 +89,7 @@ const seconds = (second) => {
 }
 h3_2.innerHTML = month(new Date().getMonth()) + " " + new Date().getDate() + ", " + new Date().getFullYear()
 + " " + hours(new Date().getHours()) + ":" + minutes(new Date().getMinutes()) + ":" + seconds(new Date().getSeconds());
+setInterval(h3_2, 1000);
 
 const colorSwitcherForDate = () => {
     let first = Math.floor(Math.random() * 255);
