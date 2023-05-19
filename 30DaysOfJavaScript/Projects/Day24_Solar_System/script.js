@@ -1,7 +1,8 @@
 let body = document.querySelector('body');
-body.style.cssText = 'text-align: center; margin: 0px 100px'
+body.style.cssText = 'background-image: url("/30DaysOfJavaScript/Projects/Day24_Solar_System/images/galaxy.gif"); text-align: center; margin: 0px 100px; color: white;  height: 500px; font-family: Trebuchet MS; font-weight: lighter';
 let header = document.querySelector('header');
 let title = document.querySelector('h1');
+title.style.cssText = 'color: white';
 let input = document.querySelector('input');
 let planetList = document.querySelector('select');
 let planetNames = ['mercury', 'venus', 'earth', 'moon', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
@@ -26,9 +27,9 @@ let holder = document.querySelector('.none');
 let button = document.querySelector('button');
 let main = document.querySelector('main');
 let content = document.querySelector('div');
-// content.style.cssText = 'background-image: url("/30DaysOfJavaScript/Projects/Day24_Solar_System/images/galaxy.gif"); height: 500px; top: 10px; left: 10px; z-index: 1;';
 let contentImageOverlay = document.querySelectorAll('div')[1];
-contentImageOverlay.style.cssText = "position: fixed; display:block; width: 900px; height: 400px; background-color: rgba(0,0,0,0.5); margin-left: 80px; z-index: 1;";
+// contentImageOverlay.style.cssText = "position: fixed; display:block; width: 900px; height: 400px; background-color: rgba(0,0,0,0.5); margin-left: 80px; z-index: 1;";
+contentImageOverlay.style.cssText = 'background-color: darkgrey';
 let contentImage = document.querySelector('img');
 contentImage.style.cssText = 'padding: 20px; width: 350px; top: 10px; left: 10px; z-index: 2;';
 let contentDescription = document.querySelectorAll('div')[2];
@@ -36,9 +37,11 @@ button.addEventListener('click', e  = () => {
     if(input.value.length <= 0){
         contentImage.style.display = 'none';
         contentDescription.textContent = 'Mass is required';
+        contentDescription.style.backgroundColor = 'grey';
     }
     else if(dropDown.value === 'none'){
         contentImage.style.display = 'none';
+        contentImageOverlay
         contentDescription.textContent = 'You did not choose a planet yet.';
     }
     else{
@@ -62,6 +65,9 @@ button.addEventListener('click', e  = () => {
                 The weight of the object on <span id="description">${planet.toUpperCase()}</span> <br>
                 <span id="answer">${(input.value * planetWeights[index]).toFixed(2).concat(' N')}</span>
                 `;
+                contentDescription.style.cssText = 'background-color: grey; color: white';
+                let description = document.querySelector('#description');
+                description.style.cssText = 'font-weight: bolder; font-size: 20pt;';
             }
         }
     }
