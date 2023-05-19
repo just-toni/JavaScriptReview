@@ -88,4 +88,5 @@ button.addEventListener('click', e  = () => {
 /**
  * arrange the image and the result text properly(for loop contents)
  * figure out how to make only the background opaque and not the elements on top of it
+ * centering text (the answer needs to be centered inside the answer section) 
  */
