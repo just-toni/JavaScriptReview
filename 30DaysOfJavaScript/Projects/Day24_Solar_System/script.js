@@ -71,7 +71,7 @@ button.addEventListener('click', e  = () => {
                 <p id="innerSection">The weight of the object on <span id="description">${planet.toUpperCase()}</span></p>
                 <br><p id="answerSection"><span id="answer">${(input.value * planetWeights[index]).toFixed(2).concat(' N')}</span></p>
                 `;
-                contentDescription.style.cssText = 'background-color: grey; color: white; width: 500px; height: 100px; margin-left: 500px; margin-top: -240px;';
+                contentDescription.style.cssText = 'background-color: grey; color: white; width: 500px; height: 130px; margin-left: 500px; margin-top: -240px; padding-top: 3px;';
                 let innerSection = document.querySelector('#innerSection');
                 innerSection.style.cssText = 'text-align: center; height: 80px; ';
                 let description = document.querySelector('#description');
@@ -79,8 +79,13 @@ button.addEventListener('click', e  = () => {
                 let answer = document.querySelector('#answer');
                 answer.style.cssText = 'font-weight: bolder; font-size: 12pt; color: white; display: block; text-align: center; ';
                 let answerSection = document.querySelector('#answerSection');
-                answerSection.style.cssText = 'background-color: lightgrey; color: white; width: 80px; height: 80px; border-radius: 50%; margin-left: 220px; margin-top: -90px;';
+                answerSection.style.cssText = 'background-color: lightgrey; color: white; width: 80px; height: 80px; border-radius: 50%; margin-left: 220px; margin-top: -75px;';
             }
         }
     }
 });
+
+/**
+ * arrange the image and the result text properly(for loop contents)
+ * figure out how to make only the background opaque and not the elements on top of it
+ */
