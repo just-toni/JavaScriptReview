@@ -29,9 +29,9 @@ let main = document.querySelector('main');
 let content = document.querySelector('div');
 let contentImageOverlay = document.querySelectorAll('div')[1];
 // contentImageOverlay.style.cssText = "position: fixed; display:block; width: 900px; height: 400px; background-color: rgba(0,0,0,0.5); margin-left: 80px; z-index: 1;";
-contentImageOverlay.style.cssText = 'background-color: darkgrey';
+contentImageOverlay.style.cssText = 'background-color: darkgrey; opacity: 0.3';
 let contentImage = document.querySelector('img');
-contentImage.style.cssText = 'padding: 20px; width: 350px; top: 10px; left: 10px; z-index: 2;';
+contentImage.style.cssText = 'padding: 20px; width: 350px; top: 10px; left: 10px; opacity: 1';
 let contentDescription = document.querySelectorAll('div')[2];
 button.addEventListener('click', e  = () => {
     if(input.value.length <= 0){
@@ -65,7 +65,7 @@ button.addEventListener('click', e  = () => {
                 The weight of the object on <span id="description">${planet.toUpperCase()}</span> <br>
                 <span id="answer">${(input.value * planetWeights[index]).toFixed(2).concat(' N')}</span>
                 `;
-                contentDescription.style.cssText = 'background-color: grey; color: white';
+                contentDescription.style.cssText = 'background-color: grey; color: white; opacity: 0.1';
                 let description = document.querySelector('#description');
                 description.style.cssText = 'font-weight: bolder; font-size: 20pt;';
             }
