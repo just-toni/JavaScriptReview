@@ -1,10 +1,13 @@
 let body = document.querySelector('body');
-body.style.cssText = 'background-image: url("/30DaysOfJavaScript/Projects/Day24_Solar_System/images/galaxy.gif"); text-align: center; margin: 0px 100px; color: white;  height: 500px; font-family: Trebuchet MS; font-weight: lighter';
+body.style.cssText = 'background-image: url("/30DaysOfJavaScript/Projects/Day24_Solar_System/images/galaxy.gif"); text-align: center; margin: 0px 150px; color: white;  height: 500px; font-family: Trebuchet MS; font-weight: lighter';
 let header = document.querySelector('header');
+header.style.cssText = 'margin-bottom: 10px;'
 let title = document.querySelector('h1');
-title.style.cssText = 'color: white';
+title.style.cssText = 'color: white; margin-bottom:50px; letter-spacing: 4px; text-shadow: 1px 1px pink';
 let input = document.querySelector('input');
+input.style.cssText = 'padding: 5px; width: 170px;'
 let planetList = document.querySelector('select');
+planetList.style.cssText = 'padding: 5px; width: 140px; height: 30px;'
 let planetNames = ['mercury', 'venus', 'earth', 'moon', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
 const planetWeights = [3.7, 8.9, 9.8, 1.6, 3.7, 23.1, 9, 8.7, 11, 7];
 const planetImageArray = ["/30DaysOfJavaScript/Projects/Day24_Solar_System/images/mercury.png",
@@ -25,24 +28,27 @@ let dropDown = document.querySelector('select');
 let planetOptions = document.querySelectorAll('option');
 let holder = document.querySelector('.none');
 let button = document.querySelector('button');
+button.style.cssText = 'height: 35px; background-color: grey; color: white; border-radius: 5px; font-size: 9pt;'
 let main = document.querySelector('main');
 let content = document.querySelector('div');
 let contentImageOverlay = document.querySelectorAll('div')[1];
 // contentImageOverlay.style.cssText = "position: fixed; display:block; width: 900px; height: 400px; background-color: rgba(0,0,0,0.5); margin-left: 80px; z-index: 1;";
-contentImageOverlay.style.cssText = 'background-color: darkgrey; opacity: 0.3';
+contentImageOverlay.style.cssText = 'background-color: darkgrey; opacity: 0.3; height: 500px';
 let contentImage = document.querySelector('img');
-contentImage.style.cssText = 'padding: 20px; width: 350px; top: 10px; left: 10px; opacity: 1';
+contentImage.style.cssText = 'padding: 20px; width: 350px; top: 10px; left: 10px; opacity: 1; margin-top: 45px';
 let contentDescription = document.querySelectorAll('div')[2];
 button.addEventListener('click', e  = () => {
     if(input.value.length <= 0){
         contentImage.style.display = 'none';
         contentDescription.textContent = 'Mass is required';
-        contentDescription.style.backgroundColor = 'grey';
+        contentDescription.style.cssText = 'background-color: grey; margin-top: -50px; margin-left:370px; width: 250px; padding: 10px 15px; opacity: 0.5;';
+        contentImageOverlay.style.cssText = 'height: 60px; background-color: darkgrey; opacity: 0.3;';
     }
     else if(dropDown.value === 'none'){
         contentImage.style.display = 'none';
-        contentImageOverlay
         contentDescription.textContent = 'You did not choose a planet yet.';
+        contentDescription.style.cssText = 'background-color: grey; margin-top: -50px; margin-left:370px; width: 250px; padding: 10px 15px; opacity: 0.5;';
+        contentImageOverlay.style.cssText = 'height: 60px; background-color: darkgrey; opacity: 0.3;';
     }
     else{
         let planet = dropDown.value;
@@ -62,12 +68,18 @@ button.addEventListener('click', e  = () => {
                 // innerSection.appendChild(resultInnerSection);
                 // contentDescription.textContent = `${innerSection}`;
                 contentDescription.innerHTML = `
-                The weight of the object on <span id="description">${planet.toUpperCase()}</span> <br>
-                <span id="answer">${(input.value * planetWeights[index]).toFixed(2).concat(' N')}</span>
+                <p id="innerSection">The weight of the object on <span id="description">${planet.toUpperCase()}</span></p>
+                <br><p id="answerSection"><span id="answer">${(input.value * planetWeights[index]).toFixed(2).concat(' N')}</span></p>
                 `;
-                contentDescription.style.cssText = 'background-color: grey; color: white; opacity: 0.1';
+                contentDescription.style.cssText = 'background-color: grey; color: white; width: 500px; height: 100px; margin-left: 500px; margin-top: -240px;';
+                let innerSection = document.querySelector('#innerSection');
+                innerSection.style.cssText = 'text-align: center; height: 80px; ';
                 let description = document.querySelector('#description');
-                description.style.cssText = 'font-weight: bolder; font-size: 20pt;';
+                description.style.cssText = 'font-weight: bolder; font-size: 15pt; color: white;';
+                let answer = document.querySelector('#answer');
+                answer.style.cssText = 'font-weight: bolder; font-size: 12pt; color: white; display: block; text-align: center; ';
+                let answerSection = document.querySelector('#answerSection');
+                answerSection.style.cssText = 'background-color: lightgrey; color: white; width: 80px; height: 80px; border-radius: 50%; margin-left: 220px; margin-top: -90px;';
             }
         }
     }
