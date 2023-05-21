@@ -40,46 +40,47 @@ const isPrime = function(n) {
     }
     return true;
 }
-// for (let index = 0; index <= 50; index++) {
-//     errorMessage.style.display = 'none';
-//     innerdiv = document.createElement('div');
-//     innerdiv.textContent = index;
-//     if(isPrime(index)){
-//         innerdiv.style.width = "70px";
-//         innerdiv.style.height = "20px"
-//         innerdiv.style.backgroundColor = "lightcoral"
-//         innerdiv.style.margin = "2px";
-//         innerdiv.style.fontSize = '25px'
-//         innerdiv.style.textAlign = 'center'
-//         innerdiv.style.padding = '10px';
-//         innerdiv.style.color = 'white';
-//         output.appendChild(innerdiv);
-//     }
-//     else if(index % 2 === 0){
-//         innerdiv.style.width = "70px";
-//         innerdiv.style.height = "20px"
-//         innerdiv.style.backgroundColor = "greenyellow"
-//         innerdiv.style.margin = "2px";
-//         innerdiv.style.fontSize = '25px'
-//         innerdiv.style.textAlign = 'center'
-//         innerdiv.style.padding = '10px';
-//         innerdiv.style.color = 'white';
-//         output.appendChild(innerdiv);
-//     }
-//     else if(index % 2 !== 0){
-//         innerdiv.style.width = "70px";
-//         innerdiv.style.height = "20px"
-//         innerdiv.style.backgroundColor = "gold"
-//         innerdiv.style.margin = "2px";
-//         innerdiv.style.fontSize = '25px'
-//         innerdiv.style.textAlign = 'center'
-//         innerdiv.style.padding = '10px';
-//         innerdiv.style.color = 'white';
-//         output.appendChild(innerdiv);
-//     }
-// }
 let innerdiv;
+for (let index = 0; index <= 50; index++) {
+    errorMessage.style.display = 'none';
+    innerdiv = document.createElement('div');
+    innerdiv.textContent = index;
+    if(isPrime(index)){
+        innerdiv.style.width = "70px";
+        innerdiv.style.height = "20px"
+        innerdiv.style.backgroundColor = "lightcoral"
+        innerdiv.style.margin = "2px";
+        innerdiv.style.fontSize = '25px'
+        innerdiv.style.textAlign = 'center'
+        innerdiv.style.padding = '10px';
+        innerdiv.style.color = 'white';
+        output.appendChild(innerdiv);
+    }
+    else if(index % 2 === 0){
+        innerdiv.style.width = "70px";
+        innerdiv.style.height = "20px"
+        innerdiv.style.backgroundColor = "greenyellow"
+        innerdiv.style.margin = "2px";
+        innerdiv.style.fontSize = '25px'
+        innerdiv.style.textAlign = 'center'
+        innerdiv.style.padding = '10px';
+        innerdiv.style.color = 'white';
+        output.appendChild(innerdiv);
+    }
+    else if(index % 2 !== 0){
+        innerdiv.style.width = "70px";
+        innerdiv.style.height = "20px"
+        innerdiv.style.backgroundColor = "gold"
+        innerdiv.style.margin = "2px";
+        innerdiv.style.fontSize = '25px'
+        innerdiv.style.textAlign = 'center'
+        innerdiv.style.padding = '10px';
+        innerdiv.style.color = 'white';
+        output.appendChild(innerdiv);
+    }
+}
 button.addEventListener('click', e = () => {
+    output.textContent = '';
     if(input.value.length === 0){
         errorMessage.textContent = 'Enter a number value in the input field to generate numbers';
         headingSection.appendChild(errorMessage);
