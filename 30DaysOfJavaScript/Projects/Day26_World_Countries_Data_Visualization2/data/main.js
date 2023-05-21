@@ -85,7 +85,6 @@ startingWordButton.addEventListener('click', e => {
         innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
     });
-    // size.innerHTML = `Countries starting with ${span1.textContent} are ${span2.textContent}`;
     size.innerHTML = `Countries containing <span id="span1">${input.value}</span> are <span id="span2">${filtered.length}</span>`;
     let span1 = document.querySelector('#span1');
     span1.style.color = colorSwitcherForInput();
@@ -116,6 +115,7 @@ searchWithAnyWordButton.addEventListener('click', e => {
 });
 
 orderButton.addEventListener('click', e => {
+    outerSection.textContent = '';
     orderButton.textContent = '^';
     let sorted_desc = countries_data.sort((a,b) => b.name > a.name);
     for (let index = sorted_desc.length - 1; index >= 0; index--) {
@@ -128,6 +128,7 @@ orderButton.addEventListener('click', e => {
 });
 
 orderButton.addEventListener('dblclick', e => {
+    outerSection.textContent = '';
     orderButton.textContent = 'v';
     let sorted_asc = countries_data.sort((a,b) => b.name > a.name);
     for (let index = 0; index < sorted_asc.length; index++) {
@@ -138,3 +139,9 @@ orderButton.addEventListener('dblclick', e => {
         outerSection.appendChild(innerdiv);
     };
 });
+
+/**
+ * change the order button text
+ * figure out how to make a single button do two things 
+ * add css styles to make it very similar to the expected value
+ */
