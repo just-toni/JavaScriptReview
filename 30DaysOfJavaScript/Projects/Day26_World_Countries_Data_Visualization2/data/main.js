@@ -47,7 +47,7 @@ outerSection.style.cssText = 'display: flex; flex-wrap: wrap; padding: 55px 75px
 secondSection.appendChild(outerSection);
 for (let index = 0; index < countries_data.length; index++) {
     const element = countries_data[index];
-    innerdiv = document.createElement('div');
+    let innerdiv = document.createElement('div');
     innerdiv.textContent = element.name;
     innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
     outerSection.appendChild(innerdiv);
@@ -55,39 +55,43 @@ for (let index = 0; index < countries_data.length; index++) {
 
 
 startingWordButton.addEventListener('click', e => {
+    let result = input.value;
     const filtered = [];
-    if(input.value.length > 1){
-        secondSection.textContent = 'Input has to be a single letter!';
-    }
-    else {
-        countries_data.filter(item => {
-            item.name.startsWith(input.value.toUpperCase()) ? filtered.push(item.name) : '';
-        });
-        filtered.forEach(value => {
-            innerdiv = document.createElement('div');
-            innerdiv.textContent = value;
-            innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
-            outerSection.appendChild(innerdiv);
-        });
-        let length = document.createElement('h6');
-        length.textContent = `Countries containing ${input.value} are ${filtered.length}`;
-        subtitle.append(length);
-    }
-});
-
-searchWithAnyWordButton.addEventListener('click', e => {
-    const filteredAll = [];
-    console.log(input.value);
     countries_data.filter(item => {
-        item.name.includes(input.value.toUpperCase()) ? filteredAll.push(item.name) : console.log(item.name);
+        item.name.toUpperCase().startsWith(result.toUpperCase()) ? filtered.push(item.name) : '';
     });
-    filteredAll.forEach(value => {
-        console.log(value);
-        innerdiv = document.createElement('div');
+    filtered.forEach(value => {
+        let innerdiv = document.createElement('div');
         innerdiv.textContent = value;
         innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
     });
+    let length = document.createElement('h6');
+    length.textContent = `Countries starting with ${input.value} are ${filtered.length}`;
+    subtitle.append(length);
+    // if(input.value.length > 1){
+    //     secondSection.textContent = 'Input has to be a single letter!';
+    // }
+    // else {
+        
+    // }
+});
+
+searchWithAnyWordButton.addEventListener('click', e => {
+    const filteredAll = [];
+    let result = input.value;
+    countries_data.filter(item => {
+        item.name.toUpperCase().includes(result.toUpperCase()) ? filteredAll.push(item.name) : '';
+    });
+    filteredAll.forEach(value => {
+        let innerdiv = document.createElement('div');
+        innerdiv.textContent = value;
+        innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+        outerSection.appendChild(innerdiv);
+    });
+    let length = document.createElement('h6');
+    length.textContent = `Countries containing ${input.value} are ${filteredAll.length}`;
+    subtitle.append(length);
 });
 
 orderButton.addEventListener('click', e => {
@@ -95,8 +99,7 @@ orderButton.addEventListener('click', e => {
     let sorted_desc = countries_data.sort((a,b) => b.name > a.name);
     for (let index = sorted_desc.length - 1; index >= 0; index--) {
         const element = sorted_desc[index];
-        console.log(element.name);
-        innerdiv = document.createElement('div');
+        let innerdiv = document.createElement('div');
         innerdiv.textContent = element.name;
         innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
@@ -108,8 +111,7 @@ orderButton.addEventListener('dblclick', e => {
     let sorted_asc = countries_data.sort((a,b) => b.name > a.name);
     for (let index = 0; index < sorted_asc.length; index++) {
         const element = sorted_asc[index];
-        console.log(element.name);
-        innerdiv = document.createElement('div');
+        let innerdiv = document.createElement('div');
         innerdiv.textContent = element.name;
         innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
