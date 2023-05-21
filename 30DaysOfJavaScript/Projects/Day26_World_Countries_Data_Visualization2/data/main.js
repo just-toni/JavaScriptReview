@@ -53,8 +53,9 @@ for (let index = 0; index < countries_data.length; index++) {
     outerSection.appendChild(innerdiv);
 }
 
-
 startingWordButton.addEventListener('click', e => {
+    subtitle.textContent = '';
+    outerSection.replaceChildren('');
     let result = input.value;
     const filtered = [];
     countries_data.filter(item => {
@@ -69,15 +70,12 @@ startingWordButton.addEventListener('click', e => {
     let length = document.createElement('h6');
     length.textContent = `Countries starting with ${input.value} are ${filtered.length}`;
     subtitle.append(length);
-    // if(input.value.length > 1){
-    //     secondSection.textContent = 'Input has to be a single letter!';
-    // }
-    // else {
-        
-    // }
+    
 });
 
 searchWithAnyWordButton.addEventListener('click', e => {
+    subtitle.textContent = '';
+    outerSection.replaceChildren('');
     const filteredAll = [];
     let result = input.value;
     countries_data.filter(item => {
