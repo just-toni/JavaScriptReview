@@ -14,6 +14,9 @@ main.appendChild(firstSection);
 main.appendChild(secondSection);
 let subtitle = document.createElement('h4');
 subtitle.textContent = `Total number of countries: ${countries_data.length}`;
+let size = document.createElement('h6');
+size.style.cssText = 'font-size:10pt;'
+subtitle.appendChild(size);
 firstSection.appendChild(subtitle);
 let startingWordButton = document.createElement('button');
 startingWordButton.textContent = 'STARTING WORD';
@@ -53,8 +56,23 @@ for (let index = 0; index < countries_data.length; index++) {
     outerSection.appendChild(innerdiv);
 }
 
+function colorSwitcherForInput () {
+    let first = Math.floor(Math.random() * 255);
+    let second = Math.floor(Math.random() * 255);
+    let third = Math.floor(Math.random() * 255);
+    let rgb = `rgb(${first}, ${second}, ${third})`;
+    return rgb;
+};
+
+function colorSwitcherForSize (){
+    let first = Math.floor(Math.random() * 255);
+    let second = Math.floor(Math.random() * 255);
+    let third = Math.floor(Math.random() * 255);
+    let rgb = `rgb(${first}, ${second}, ${third})`;
+    return rgb;
+};
+
 startingWordButton.addEventListener('click', e => {
-    subtitle.textContent = '';
     outerSection.replaceChildren('');
     let result = input.value;
     const filtered = [];
@@ -67,15 +85,17 @@ startingWordButton.addEventListener('click', e => {
         innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
     });
-    let length = document.createElement('h6');
-    length.textContent = `Countries starting with ${input.value} are ${filtered.length}`;
-    subtitle.append(length);
-    
+    // size.innerHTML = `Countries starting with ${span1.textContent} are ${span2.textContent}`;
+    size.innerHTML = `Countries containing <span id="span1">${input.value}</span> are <span id="span2">${filtered.length}</span>`;
+    let span1 = document.querySelector('#span1');
+    span1.style.color = colorSwitcherForInput();
+    let span2 = document.querySelector('#span2');
+    span2.style.color = colorSwitcherForSize();
+    subtitle.appendChild(size);
 });
 
 searchWithAnyWordButton.addEventListener('click', e => {
-    subtitle.textContent = '';
-    outerSection.replaceChildren('');
+    outerSection.textContent = '';
     const filteredAll = [];
     let result = input.value;
     countries_data.filter(item => {
@@ -87,9 +107,12 @@ searchWithAnyWordButton.addEventListener('click', e => {
         innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
     });
-    let length = document.createElement('h6');
-    length.textContent = `Countries containing ${input.value} are ${filteredAll.length}`;
-    subtitle.append(length);
+    size.innerHTML = `Countries containing <span id="span1">${input.value}</span> are <span id="span2">${filteredAll.length}</span>`;
+    let span1 = document.querySelector('#span1');
+    span1.style.color = colorSwitcherForInput();
+    let span2 = document.querySelector('#span2');
+    span2.style.color = colorSwitcherForSize();
+    subtitle.appendChild(size);
 });
 
 orderButton.addEventListener('click', e => {
