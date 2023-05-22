@@ -39,3 +39,22 @@ function displayAnimation() {
     text_img.setAttribute('src', titleIcon[index]);
     text_img.setAttribute('alt', titleIconAlt[index]);
 }
+const languages = ["Pandas", 'numpy', 'react', 'python', 'mongodb', 'javascript', 'redux', 'node']; 
+let transitionSection2 = document.createElement('section');
+body.appendChild(transitionSection2);
+let p = document.createElement('p')
+p.textContent = 'The technologies I teach ';
+transitionSection2.appendChild(p);
+setInterval(displaySpan, 2000);
+function displaySpan() {
+    p.textContent = 'The technologies I teach ';
+    let span = document.createElement('span');
+    let index = Math.floor(Math.random() * languages.length);
+    span.textContent = languages[index].toUpperCase();
+    span.setAttribute('id', 'language')
+    p.appendChild(span);
+    let rgb1 = Math.floor(Math.random() * 255);
+    let rgb2 = Math.floor(Math.random() * 255);
+    let rgb3 = Math.floor(Math.random() * 255);
+    span.style.color = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
+}
