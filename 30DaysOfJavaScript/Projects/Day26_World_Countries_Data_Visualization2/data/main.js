@@ -114,31 +114,40 @@ searchWithAnyWordButton.addEventListener('click', e => {
     subtitle.appendChild(size);
 });
 
+let isAsc = true;
+
 orderButton.addEventListener('click', e => {
-    outerSection.textContent = '';
-    orderButton.textContent = '^';
-    let sorted_desc = countries_data.sort((a,b) => b.name > a.name);
-    for (let index = sorted_desc.length - 1; index >= 0; index--) {
-        const element = sorted_desc[index];
-        let innerdiv = document.createElement('div');
-        innerdiv.textContent = element.name;
-        innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
-        outerSection.appendChild(innerdiv);
+    if(isAsc){
+        outerSection.textContent = '';
+        orderButton.textContent = '^';
+        let sorted_desc = countries_data.sort((a,b) => b.name > a.name);
+        for (let index = sorted_desc.length - 1; index >= 0; index--) {
+            const element = sorted_desc[index];
+            let innerdiv = document.createElement('div');
+            innerdiv.textContent = element.name;
+            innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+            outerSection.appendChild(innerdiv);
+        };
+        isAsc = false;
+    }
+    else{
+        outerSection.textContent = '';
+        orderButton.textContent = 'v';
+        let sorted_asc = countries_data.sort((a,b) => b.name > a.name);
+        for (let index = 0; index < sorted_asc.length; index++) {
+            const element = sorted_asc[index];
+            let innerdiv = document.createElement('div');
+            innerdiv.textContent = element.name;
+            innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+            outerSection.appendChild(innerdiv);
+        };
+        isAsc = true;
     };
 });
 
-orderButton.addEventListener('dblclick', e => {
-    outerSection.textContent = '';
-    orderButton.textContent = 'v';
-    let sorted_asc = countries_data.sort((a,b) => b.name > a.name);
-    for (let index = 0; index < sorted_asc.length; index++) {
-        const element = sorted_asc[index];
-        let innerdiv = document.createElement('div');
-        innerdiv.textContent = element.name;
-        innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
-        outerSection.appendChild(innerdiv);
-    };
-});
+// orderButton.addEventListener('dblclick', e => {
+    
+// });
 
 /**
  * change the order button text
