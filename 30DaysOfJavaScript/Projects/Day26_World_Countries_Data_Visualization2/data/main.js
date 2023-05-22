@@ -4,6 +4,7 @@ body.appendChild(main);
 body.style.cssText = 'text-align:center; color: white';
 let title = document.createElement('h1');
 title.textContent = 'World Countries List';
+title.style.cssText = 'text-transform: uppercase; letter-spacing: 10px; font-size: 45px; margin-top: 85px;'
 let firstSection = document.createElement('section');
 firstSection.setAttribute('id', 'firstSection');
 firstSection.appendChild(title);
@@ -14,17 +15,22 @@ main.appendChild(firstSection);
 main.appendChild(secondSection);
 let subtitle = document.createElement('h4');
 subtitle.textContent = `Total number of countries: ${countries_data.length}`;
+subtitle.style.cssText = 'margin-top: -35px;';
 let size = document.createElement('h6');
 size.style.cssText = 'font-size:10pt;'
 subtitle.appendChild(size);
 firstSection.appendChild(subtitle);
 let startingWordButton = document.createElement('button');
+startingWordButton.style.cssText = 'background-color: mediumslateblue; padding: 10px; margin-right: 10px; font-size:8pt; color: white;';
 startingWordButton.textContent = 'STARTING WORD';
 let searchWithAnyWordButton = document.createElement('button');
+searchWithAnyWordButton.style.cssText = 'background-color: mediumslateblue; padding: 10px; margin-right: 10px; font-size:8pt; color: white;';
 searchWithAnyWordButton.textContent = 'SEARCH WITH ANY WORD';
 let orderButton = document.createElement('button');
+orderButton.style.cssText = 'background-color: mediumslateblue; padding: 10px; font-size:8pt; color: white;';
 orderButton.textContent = `v`;
 let buttonContainer = document.createElement('section');
+buttonContainer.style.cssText = 'font-size:8pt;'
 buttonContainer.setAttribute('id', 'buttonContainer');
 buttonContainer.appendChild(startingWordButton);
 buttonContainer.appendChild(searchWithAnyWordButton);
@@ -35,7 +41,7 @@ firstSection.appendChild(searchSection);
 let input = document.createElement('input');
 input.setAttribute('type', 'text');
 input.setAttribute('placeholder', 'Search country...');
-input.style.cssText = 'width: 350px; border-radius: 10px; padding: 5px; text-align: center;'
+input.style.cssText = 'width: 450px; border-radius: 10px; padding: 5px; text-align: center;'
 let searchButton = document.createElement('button');
 let buttonImage = document.createElement('img');
 buttonImage.setAttribute('src', '../img/search.png');
@@ -73,6 +79,7 @@ function colorSwitcherForSize (){
 };
 
 startingWordButton.addEventListener('click', e => {
+    startingWordButton.style.backgroundColor = 'blueviolet';
     outerSection.replaceChildren('');
     let result = input.value;
     const filtered = [];
@@ -86,6 +93,7 @@ startingWordButton.addEventListener('click', e => {
         outerSection.appendChild(innerdiv);
     });
     size.innerHTML = `Countries containing <span id="span1">${input.value}</span> are <span id="span2">${filtered.length}</span>`;
+    size.style.cssText = 'margin-top: 5px;';
     let span1 = document.querySelector('#span1');
     span1.style.color = colorSwitcherForInput();
     let span2 = document.querySelector('#span2');
@@ -94,6 +102,7 @@ startingWordButton.addEventListener('click', e => {
 });
 
 searchWithAnyWordButton.addEventListener('click', e => {
+    searchWithAnyWordButton.style.backgroundColor = 'blueviolet';
     outerSection.textContent = '';
     const filteredAll = [];
     let result = input.value;
@@ -107,6 +116,7 @@ searchWithAnyWordButton.addEventListener('click', e => {
         outerSection.appendChild(innerdiv);
     });
     size.innerHTML = `Countries containing <span id="span1">${input.value}</span> are <span id="span2">${filteredAll.length}</span>`;
+    size.style.cssText = 'margin-top: 5px;';
     let span1 = document.querySelector('#span1');
     span1.style.color = colorSwitcherForInput();
     let span2 = document.querySelector('#span2');
@@ -117,6 +127,7 @@ searchWithAnyWordButton.addEventListener('click', e => {
 let isAsc = true;
 
 orderButton.addEventListener('click', e => {
+    orderButton.style.backgroundColor = 'blueviolet';
     if(isAsc){
         outerSection.textContent = '';
         orderButton.textContent = '^';
