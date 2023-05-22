@@ -8,7 +8,7 @@ title.style.cssText = 'text-transform: uppercase; letter-spacing: 10px; font-siz
 let firstSection = document.createElement('section');
 firstSection.setAttribute('id', 'firstSection');
 firstSection.appendChild(title);
-firstSection.style.cssText = 'background-image: url("../img/globe.jpg"); background-repeat: no-repeat; height: 400px; background-size:cover; background-position:center; margin: -8px; padding: 40px;'
+firstSection.style.cssText = 'background-image: url("../Day26_World_Countries_Data_Visualization2/img/globe.jpg"); background-repeat: no-repeat; height: 400px; background-size:cover; background-position:center; margin: -8px; padding: 40px;'
 let secondSection = document.createElement('section');
 secondSection.setAttribute('id', 'secondSection');
 main.appendChild(firstSection);
@@ -44,7 +44,7 @@ input.setAttribute('placeholder', 'Search country...');
 input.style.cssText = 'width: 450px; border-radius: 10px; padding: 5px; text-align: center;'
 let searchButton = document.createElement('button');
 let buttonImage = document.createElement('img');
-buttonImage.setAttribute('src', '../img/search.png');
+buttonImage.setAttribute('src', '../Day26_World_Countries_Data_Visualization2/img/search.png');
 buttonImage.setAttribute('alt', 'Search icon');
 buttonImage.style.cssText = 'width: 18px;';
 searchButton.appendChild(buttonImage);
@@ -58,7 +58,7 @@ for (let index = 0; index < countries_data.length; index++) {
     const element = countries_data[index];
     let innerdiv = document.createElement('div');
     innerdiv.textContent = element.name;
-    innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+    innerdiv.style.cssText = 'background-image: url("../Day26_World_Countries_Data_Visualization2/img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
     outerSection.appendChild(innerdiv);
 }
 
@@ -89,7 +89,7 @@ startingWordButton.addEventListener('click', e => {
     filtered.forEach(value => {
         let innerdiv = document.createElement('div');
         innerdiv.textContent = value;
-        innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+        innerdiv.style.cssText = 'background-image: url("../Day26_World_Countries_Data_Visualization2/img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
     });
     size.innerHTML = `Countries containing <span id="span1">${input.value}</span> are <span id="span2">${filtered.length}</span>`;
@@ -112,7 +112,7 @@ searchWithAnyWordButton.addEventListener('click', e => {
     filteredAll.forEach(value => {
         let innerdiv = document.createElement('div');
         innerdiv.textContent = value;
-        innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+        innerdiv.style.cssText = 'background-image: url("../Day26_World_Countries_Data_Visualization2/img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
         outerSection.appendChild(innerdiv);
     });
     size.innerHTML = `Countries containing <span id="span1">${input.value}</span> are <span id="span2">${filteredAll.length}</span>`;
@@ -136,7 +136,7 @@ orderButton.addEventListener('click', e => {
             const element = sorted_desc[index];
             let innerdiv = document.createElement('div');
             innerdiv.textContent = element.name;
-            innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+            innerdiv.style.cssText = 'background-image: url("../Day26_World_Countries_Data_Visualization2/img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
             outerSection.appendChild(innerdiv);
         };
         isAsc = false;
@@ -149,7 +149,7 @@ orderButton.addEventListener('click', e => {
             const element = sorted_asc[index];
             let innerdiv = document.createElement('div');
             innerdiv.textContent = element.name;
-            innerdiv.style.cssText = 'background-image: url("../img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
+            innerdiv.style.cssText = 'background-image: url("../Day26_World_Countries_Data_Visualization2/img/world-map.jpg"); background-size: contain; width: 100px; height: 80px; text-transform: uppercase; border: 2px solid lightgrey; margin: 9px 20px; font-size: 8pt; font-weight: bold; border-radius: 5px; height: 110px; width:100px';
             outerSection.appendChild(innerdiv);
         };
         isAsc = true;
