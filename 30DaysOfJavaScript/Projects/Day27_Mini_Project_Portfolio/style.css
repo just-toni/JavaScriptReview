@@ -1,21 +1,68 @@
 #text{
+    background-color: rgb(231, 200, 211);
+    padding: 4px;
+}
+
+h1{
+    letter-spacing: 10px;
+    font-weight: lighter;
+    font-size: 30pt;
+}
+
+body{
+    margin: 0 150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#inner_text{
     display: flex;
     flex-flow: row wrap;
-    /* align-content: center; */
-    /* justify-items: space-between; */
+    margin-left: 20px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+ul > section{
+    background-color: lightgray;
+    border: 1px solid none;
+    /* margin: 30px; */
+    width: 200px;
+    height: 150px;
+}
+
+ul > section:hover{
+    background-color: rgb(231, 200, 211);
+    font-size: larger;
+}
+
+ul > section > li{
+    text-align: center;
+    padding-top: 55px;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: justify;
+    line-height: 30px;
+}
+
+p > span {
+    font-weight: bolder;
+    font-size: 13pt;
 }
 
 img{
-    width: 50px;
-    height: 25px;
-    padding-top: 10px;
+    width: 30px;
+    height: 40px;
+    padding-top: 6px;
 }
 
 #text-title{
-    /* display: flex; */
-    /* width: 100px; */
-    /* height: 100px; */
-    /* background-color: red; */
+    text-transform: capitalize;
     position: relative;
     animation: slide-in 1s normal 0s 1;
 }
