@@ -1,0 +1,39 @@
+#text{
+    display: flex;
+    flex-flow: row wrap;
+    /* align-content: center; */
+    /* justify-items: space-between; */
+}
+
+img{
+    width: 50px;
+    height: 25px;
+    padding-top: 10px;
+}
+
+#text-title{
+    /* display: flex; */
+    /* width: 100px; */
+    /* height: 100px; */
+    /* background-color: red; */
+    position: relative;
+    animation: slide-in 1s normal 0s 1;
+}
+
+@keyframes slide-in {
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: 50px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 100px;
+    }
+}
