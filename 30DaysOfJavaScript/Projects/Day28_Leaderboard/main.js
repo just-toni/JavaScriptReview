@@ -1,6 +1,8 @@
 let body = document.querySelector('body');
 let section = document.createElement('section');
+section.setAttribute('id', 'buttonSection')
 let leaderboard = document.createElement('section');
+leaderboard.setAttribute('id', 'leaderboard');
 body.appendChild(section);
 body.appendChild(leaderboard);
 let input1 = document.createElement('input');
@@ -27,19 +29,6 @@ section.appendChild(input2);
 section.appendChild(input3);
 section.appendChild(input4);
 section.appendChild(addPlayerButton);
-
-
-
-function validateInputIsNotEmpty(){
-    // leaderboard.textContent = '';
-    if(input1.value.length === 0 && input2.value.length === 0 && input3.value.length === 0 && input4.value.length === 0){
-        leaderboard.textContent = 'All fields required';
-        input1.style.borderBlockColor = 'red';
-        input2.style.borderBlockColor = 'red';
-        input3.style.borderBlockColor = 'red';
-        input4.style.borderBlockColor = 'red';
-    }
-}
 
 const month = (number) => {
     if(number === 0){
@@ -92,57 +81,74 @@ const minutes = (minute) => {
     else return minute;
 }
 
-
 addPlayerButton.addEventListener('click', e => {
-    validateInputIsNotEmpty();
-    let innerSection = document.createElement('section');
-    let first = document.createElement('p');
-    let second = document.createElement('p');
-    let third = document.createElement('p')
-    let fourth = document.createElement('section');
-    let userName = document.createElement('p');
-    let date = document.createElement('p');
-    let deleteButton = document.createElement('button');
-    let incrementButton = document.createElement('button');
-    let decrementButton = document.createElement('button');
-    let deleteButtonImage = document.createElement("img");
-    /**
-     * the delete icon was gotten from https://www.flaticon.com/free-icon/trash-can_4734087?term=delete&page=2&position=47&origin=search&related_id=4734087
-     */
-    deleteButtonImage.setAttribute('src', '../Day28_Leaderboard/img/delete.png');
-    deleteButtonImage.setAttribute('alt', 'Delete Icon');
-    deleteButton.appendChild(deleteButtonImage);
-    userName.textContent = input1.value + " " + input2.value;
-    date.textContent = month(new Date().getMonth()) + " " + new Date().getDate() + ", " + new Date().getFullYear()
-    + " " + hours(new Date().getHours()) + ":" + minutes(new Date().getMinutes());
-    first.appendChild(userName);
-    first.appendChild(date);
-    second.textContent = input3.value;
-    third.textContent = input4.value;
-    incrementButton.textContent = '+5';
-    decrementButton.textContent = '-5';
-    fourth.appendChild(deleteButton);
-    fourth.appendChild(incrementButton);
-    fourth.appendChild(decrementButton);
-    innerSection.appendChild(first);
-    innerSection.appendChild(second);
-    innerSection.appendChild(third);
-    innerSection.appendChild(fourth);
-    leaderboard.appendChild(innerSection);
+    let text = document.createElement('p');
+    if(input1.value.length === 0 && input2.value.length === 0 && input3.value.length === 0 && input4.value.length === 0){
+        // find a way to remove this text when the user enters all the values
+        text.textContent = 'All fields required';
+        text.style.color = 'red';
+        leaderboard.appendChild(text);
+        input1.style.borderBlockColor = 'red';
+        input2.style.borderBlockColor = 'red';
+        input3.style.borderBlockColor = 'red';
+        input4.style.borderBlockColor = 'red';
+        // leaderboard.textContent = '';
+    }
+    else{
+        leaderboard.style.color = 'black';
+        let innerSection = document.createElement('section');
+        innerSection.setAttribute('class', 'innerSection')
+        let first = document.createElement('p');
+        first.setAttribute('id', 'first');
+        let second = document.createElement('p');
+        second.setAttribute('id', 'second');
+        let third = document.createElement('p')
+        third.setAttribute('id', 'third');
+        let fourth = document.createElement('section');
+        fourth.setAttribute('id', 'fourth');
+        let userName = document.createElement('p');
+        let date = document.createElement('p');
+        let deleteButton = document.createElement('button');
+        let incrementButton = document.createElement('button');
+        let decrementButton = document.createElement('button');
+        let deleteButtonImage = document.createElement("img");
+        /**
+         * the delete icon was gotten from https://www.flaticon.com/free-icon/trash-can_4734087?term=delete&page=2&position=47&origin=search&related_id=4734087
+         */
+        deleteButtonImage.setAttribute('src', '../Day28_Leaderboard/img/delete.png');
+        deleteButtonImage.setAttribute('alt', 'Delete Icon');
+        deleteButton.appendChild(deleteButtonImage);
+        userName.textContent = input1.value.toUpperCase() + " " + input2.value.toUpperCase();
+        date.textContent = month(new Date().getMonth()) + " " + new Date().getDate() + ", " + new Date().getFullYear()
+        + " " + hours(new Date().getHours()) + ":" + minutes(new Date().getMinutes());
+        date.style.color = 'lightgray';
+        first.appendChild(userName);
+        first.appendChild(date);
+        date.style.letterSpacing = '-1.5px';
+        second.textContent = input3.value.toUpperCase();
+        third.textContent = input4.value.toUpperCase();
+        incrementButton.textContent = '+5';
+        decrementButton.textContent = '-5';
+        fourth.appendChild(deleteButton);
+        fourth.appendChild(incrementButton);
+        fourth.appendChild(decrementButton);
+        innerSection.appendChild(first);
+        innerSection.appendChild(second);
+        innerSection.appendChild(third);
+        innerSection.appendChild(fourth);
+        leaderboard.appendChild(innerSection);
 
-    deleteButton.addEventListener('click', e => {
-        innerSection.textContent = '';
-    });
+        deleteButton.addEventListener('click', e => {
+            innerSection.textContent = '';
+            innerSection.remove();
+        });
 
-    incrementButton.addEventListener('click', e => {
-        third.textContent = Number.parseInt(third.textContent) + 5;
-    });
+        incrementButton.addEventListener('click', e => {
+            third.textContent = Number.parseInt(third.textContent) + 5;
+        });
 
-    decrementButton.addEventListener('click', e => {
-        third.textContent = Number.parseInt(third.textContent) - 5;
-    });
+        decrementButton.addEventListener('click', e => {
+            third.textContent = Number.parseInt(third.textContent) - 5;
+        });
+    }
 });
-
-
-
-
